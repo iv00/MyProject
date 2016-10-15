@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AugGraffitti README
 ### Checkpoint-1
 This submission consists of two activities in the application: MainActivity.java and MapsActivity.java
@@ -103,7 +102,7 @@ It gets the handle to the ```GoogleMap``` object.
 
 - [x] Login Screen
 - [x] Map Screen
-- [ ] Place Screen
-- [ ] Collect Screen
-- [ ] Gallery
->>>>>>> origin/master
+- [x] Place Screen
+- [x] Collect Screen
+- [x] Gallery
+
