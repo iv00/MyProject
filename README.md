@@ -1,6 +1,11 @@
 # AugGraffitti README
-### Checkpoint-1
-This submission consists of two activities in the application: MainActivity.java and MapsActivity.java
+### EEE 598 MSA Assignment 1
+Contributors: Irene Varughese, Jose Columbie
+
+
+___
+
+This application consists of five activities: MainActivity.java, MapsActivity.java, PlaceActivity.java, CollectActivity.java, and GalleryActivity.java.
 
 ## MainActivity.java
 
@@ -37,7 +42,7 @@ The MapsActivity class implements the second screen of the app.
         android:layout_height="match_parent"
         tools:context="com.example.javier.auggraffititest.MapsActivity" />
 ```
-**Buttons:** The Map screen also shows the Collect, Gallery, and Score buttons. These are three further activities that will be developed for this application.
+**Buttons:** The Map screen also shows the Collect, Gallery, and Score buttons.
 
 **Signout:** The ```private void signOut()``` method implements the signout sequence and takes the user back to the Main activity. 
 
@@ -46,13 +51,39 @@ It gets the handle to the ```GoogleMap``` object.
 
 **Location Services:** The methods ```public void onLocationChanged(Location location)```, ```public void onRequestPermissionsResult```, and ```public boolean checkLocationPermission()``` provide the necessary location services for the app. The method ```private String LookForTags(String userEmail, String loc_long, String loc_lat)``` looks for tags in a background thread.
 
+
+## CollectActivity.java
+ 
+The CollectActivity class implements the screen of the app that lets the user view and collect tags placed by artists. 
+
+**Initiate Activity:** ```protected void onCreate(Bundle savedInstanceState)``` is called when the activity is starting. onCreate calls ```setContentView(R.layout.activity_main);``` which starts up the activity UI. The collect button is also initiated here. 
+
+**Camera Operations and collect:** ```CameraManager``` is a system service manager for detecting, characterizing, and connecting to CameraDevices. This class is a client for the Camera service which manages the camera hardware. Methods ```createCameraPreview()```, ```updatePreview()```, ```collect()```, and ```closeCamera()``` performs the camera operations required for the Collect screen.
+
+**Permissions:** Method ```onRequestPermissionsResult``` ensures required device permissions to use the camera.
+
+## PlaceActivity.java
+ 
+The PlaceActivity class implements the screen of the app that lets the user place tags at a certain geographical location. 
+
+**Initiate Activity:** ```protected void onCreate(Bundle savedInstanceState)``` is called when the activity is starting. onCreate calls ```setContentView(R.layout.activity_main);``` which starts up the activity UI. The commit button is also initiated here.
+
+**Orientations:** The SensorManager class is used to create an instance of the sensor service. This class provides access to azimuth and altitude information through the ```getOrientation()``` method.
+
+**Camera Operations and commit:** ```CameraManager``` is a system service manager for detecting, characterizing, and connecting to CameraDevices. This class is a client for the Camera service which manages the camera hardware. Methods ```createCameraPreview()```, ```updatePreview()```, ```commit()```, and ```closeCamera()``` performs the camera operations required for the Place screen. 
+
+
+## GalleryActivity.java
+ 
+The GalleryActivity class implements the screen of the app that displays all the tags collected by the user. 
+
+**Initiate Activity:** ```protected void onCreate(Bundle savedInstanceState)``` is called when the activity is starting. onCreate calls ```setContentView(R.layout.activity_main);``` which starts up the activity UI.
+
+**Display images:** Methods ```getImages()``` opens POST connection and recieves the images in the Background thread. 
+
+
+
+
+
 ***
-
-### To Be Implemented
-
-- [x] Login Screen
-- [x] Map Screen
-- [x] Place Screen
-- [x] Collect Screen
-- [x] Gallery
 
